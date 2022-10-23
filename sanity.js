@@ -1,3 +1,4 @@
+// import { codeInput } from '@sanity/code-input';
 import createImageUrlBuilder from '@sanity/image-url';
 import { createClient, createCurrentUserHook } from 'next-sanity';
 
@@ -7,6 +8,10 @@ export const config = {
   apiVersion: '2021-10-21',
   useCdn: process.env.NODE_ENV === 'production',
 }
+// export default createConfig({
+//   // ...
+//   plugins: [codeInput()],
+// })
 
 export const sanityClient = createClient(config)
 export const urlFor = (source) => createImageUrlBuilder(config).image(source)

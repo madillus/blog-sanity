@@ -1,7 +1,10 @@
+import { PortableText } from '@portabletext/react';
 import { GetStaticProps } from 'next';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import PortableText from 'react-portable-text';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Header from '../../components/Header';
 import { sanityClient, urlFor } from '../../sanity';
 import { Post } from '../../types';
@@ -15,6 +18,78 @@ interface IFormInput {
 
 interface Props {
   post: Post
+}
+
+const components = {
+  types: {
+    image: ({ value }: { value: string }) => {
+      return (
+        <img
+          className="w-auto h-auto object-cover"
+          src={urlFor(value).url()!}
+        />
+      )
+    },
+    code: (props: any) => {
+      return (
+        <pre className="p-3 mx-2 my-4" data-language={props.language}>
+          <SyntaxHighlighter language="react" style={nightOwl}>
+            {props.value.code}
+          </SyntaxHighlighter>
+        </pre>
+      )
+    },
+    h1: (props: any) => <h1 className="text-2xl font-bold my-5" {...props} />,
+    h2: (props: any) => <h2 className="text-xl font-bold my-5" {...props} />,
+    h3: (props: any) => (
+      <h3 className="bg-slate-200 p-3 mx-4 my-4" {...props} />
+    ),
+    li: ({ children }: any) => <li className="ml-4 list-disc">{children}</li>,
+    normal: (props: any) => (
+      <p className="font-sans font-normal mx-2 leading-relaxed	" {...props} />
+    ),
+    link: ({ href, children }: any) => {
+      return (
+        <a href={href} className="text-blue-500 hover:underline">
+          {children}
+        </a>
+      )
+    },
+  },
+  block: {
+    h1: (props: any) => <h1 className="text-2xl font-bold my-5" {...props} />,
+    h2: (props: any) => <h2 className="text-xl font-bold my-5" {...props} />,
+    h3: (props: any) => (
+      <h3 className="bg-slate-200 p-3 mx-4 my-4" {...props} />
+    ),
+    li: ({ children }: any) => <li className="ml-4 list-disc">{children}</li>,
+    normal: (props: any) => (
+      <p className="font-sans font-normal mx-2 leading-relaxed	" {...props} />
+    ),
+    code: (props: any) => {
+      return (
+        <pre className="p-3 mx-2 my-4" data-language={props.language}>
+          <SyntaxHighlighter language="react" style={nightOwl}>
+            {props.value.code}
+          </SyntaxHighlighter>
+        </pre>
+      )
+    },
+    image: (props: any) => (
+      <img
+        className="w-auto h-auto object-cover"
+        src={urlFor().url()!}
+        {...props}
+      />
+    ),
+    link: ({ href, children }: any) => {
+      return (
+        <a href={href} className="text-blue-500 hover:underline">
+          {children}
+        </a>
+      )
+    },
+  },
 }
 
 function Post({ post }: Props) {
@@ -39,17 +114,16 @@ function Post({ post }: Props) {
         setSubmitted(false)
       })
   }
+  const { title, mainImage, body, slug } = post
 
   return (
     <main>
       <Header />
       {post.mainImage && (
         <img
-          className=" h-40 w-full object-cover max-w-4xl mx-auto lg:h-60"
+          className=" h-40 w-full object-cover max-w-4xl mx-auto lg:h-80"
           src={urlFor(post.mainImage).url()!}
           alt="Main image"
-          // width="40%"
-          // height="40%"
         />
       )}
 
@@ -75,30 +149,8 @@ function Post({ post }: Props) {
           </p>
         </div>
         <hr className="max-w-sm my-10 mx-auto border md:max-w-3xl border-violet-600" />
-
-        <div>
-          <PortableText
-            className=""
-            dataset={process.env.NEXT_PUBLIC_SANIY_DATASET!}
-            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-            content={post.body}
-            serializers={{
-              h1: (props: any) => (
-                <h1 className="text-2xl font-bold my-5" {...props} />
-              ),
-              h2: (props: any) => (
-                <h2 className="text-xl font-bold my-5" {...props} />
-              ),
-              li: ({ children }: any) => (
-                <li className="ml-4 list-disc">{children}</li>
-              ),
-              link: ({ href, children }: any) => (
-                <a href={href} className="text-blue-500 hover:underline">
-                  {children}
-                </a>
-              ),
-            }}
-          />
+        <div className="prose m-auto">
+          <PortableText value={body} components={components} />
         </div>
       </article>
       <hr className="max-w-sm my-10 mx-auto border md:max-w-3xl border-violet-600" />
@@ -236,6 +288,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         asset->
       },
     },
+
+
   }`
 
   const post = await sanityClient.fetch(query, {
@@ -267,3 +321,64 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 //     {...props}
 //   />
 // ),
+
+// ...,
+// _type == "code" => {
+//   ...,
+//   asset->
+// },
+
+// <PortableText
+//             className=""
+//             dataset={process.env.NEXT_PUBLIC_SANIY_DATASET!}
+//             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+//             content={post.body}
+//             serializers={{
+//               h1: (props: any) => (
+//                 <h1 className="text-2xl font-bold my-5" {...props} />
+//               ),
+//               h2: (props: any) => (
+//                 <h2 className="text-xl font-bold my-5" {...props} />
+//               ),
+//               h3: (props: any) => (
+//                 <h3 className="bg-slate-200 p-3 mx-4 my-4" {...props} />
+//               ),
+//               li: ({ children }: any) => (
+//                 <li className="ml-4 list-disc">{children}</li>
+//               ),
+//               normal: (props: any) => (
+//                 <p
+//                   className="font-sans font-normal mx-2 leading-relaxed	"
+//                   {...props}
+//                 />
+//               ),
+//               code: (props: any) => (
+//                 <div className="bg-gray-100 p-4 my-4 rounded-lg" {...props} />
+//               ),
+
+//               link: ({ href, children }: any) => (
+//                 <a href={href} className="text-blue-500 hover:underline">
+//                   {children}
+//                 </a>
+//               ),
+
+//               // code: (props: any) => (
+//               //   <code className="my-2">
+//               //     <SyntaxHighlighter language={props.node.language}>
+//               //       {props}
+//               //     </SyntaxHighlighter>
+//               //   </code>
+//               // ),
+//             }}
+//           />
+
+// const CodeSnippet = ({ code, language }) => {
+//   return (
+//     <div>
+//       <span className="code-lang">{language}</span>
+//       <pre data-language={language} className={`language-${language}`}>
+//         <code>{code}</code>
+//       </pre>
+//     </div>
+//   )
+// }

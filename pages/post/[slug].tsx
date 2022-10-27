@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { PortableText } from '@portabletext/react';
 import { GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
@@ -48,40 +47,6 @@ const components = {
     li: ({ children }: any) => <li className="ml-4 list-disc">{children}</li>,
     normal: (props: any) => (
       <p className="font-sans font-normal mx-2 leading-relaxed	" {...props} />
-    ),
-    link: ({ href, children }: any) => {
-      return (
-        <a href={href} className="text-blue-500 hover:underline">
-          {children}
-        </a>
-      )
-    },
-  },
-  block: {
-    h1: (props: any) => <h1 className="text-2xl font-bold my-5" {...props} />,
-    h2: (props: any) => <h2 className="text-xl font-bold my-5" {...props} />,
-    h3: (props: any) => (
-      <h3 className="bg-slate-200 p-3 mx-4 my-4" {...props} />
-    ),
-    li: ({ children }: any) => <li className="ml-4 list-disc">{children}</li>,
-    normal: (props: any) => (
-      <p className="font-sans font-normal mx-2 leading-relaxed	" {...props} />
-    ),
-    code: (props: any) => {
-      return (
-        <pre className="p-3 mx-2 my-4" data-language={props.language}>
-          <SyntaxHighlighter language="react" style={nightOwl}>
-            {props.value.code}
-          </SyntaxHighlighter>
-        </pre>
-      )
-    },
-    image: (props: any) => (
-      <img
-        className="w-auto h-auto object-cover"
-        src={urlFor().url()!}
-        {...props}
-      />
     ),
     link: ({ href, children }: any) => {
       return (
@@ -383,3 +348,37 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 //     </div>
 //   )
 // }
+// block: {
+//   h1: (props: any) => <h1 className="text-2xl font-bold my-5" {...props} />,
+//   h2: (props: any) => <h2 className="text-xl font-bold my-5" {...props} />,
+//   h3: (props: any) => (
+//     <h3 className="bg-slate-200 p-3 mx-4 my-4" {...props} />
+//   ),
+//   li: ({ children }: any) => <li className="ml-4 list-disc">{children}</li>,
+//   normal: (props: any) => (
+//     <p className="font-sans font-normal mx-2 leading-relaxed	" {...props} />
+//   ),
+//   code: (props: any) => {
+//     return (
+//       <pre className="p-3 mx-2 my-4" data-language={props.language}>
+//         <SyntaxHighlighter language="react" style={nightOwl}>
+//           {props.value.code}
+//         </SyntaxHighlighter>
+//       </pre>
+//     )
+//   },
+//   image: (props: any) => (
+//     <img
+//       className="w-auto h-auto object-cover"
+//       src={urlFor().url()!}
+//       {...props}
+//     />
+//   ),
+//   link: ({ href, children }: any) => {
+//     return (
+//       <a href={href} className="text-blue-500 hover:underline">
+//         {children}
+//       </a>
+//     )
+//   },
+// },

@@ -60,6 +60,11 @@
   "resolved" "https://registry.npmjs.org/@portabletext/types/-/types-1.0.3.tgz"
   "version" "1.0.3"
 
+"@portabletext/types@^2.0.0":
+  "integrity" "sha512-AjbCPt9x9U0XFwLuVnIxweBrDAlKKcPJRVkpckjMk77VKEQoYvX2dITf5QtQf1TlLIx8zHJFtMcLmiqDJiGuLg=="
+  "resolved" "https://registry.npmjs.org/@portabletext/types/-/types-2.0.0.tgz"
+  "version" "2.0.0"
+
 "@sanity/client@^3.3.3", "@sanity/client@^3.3.5", "@sanity/client@^3.4.1":
   "integrity" "sha512-WSvnroCHqboUeyY0nl71vDPKmfurXI0mtqdNDb5u8MW00CAHRyCt1+Sgy39D/g+6R35FYniV31vTSTo3ofim0A=="
   "resolved" "https://registry.npmjs.org/@sanity/client/-/client-3.4.1.tgz"

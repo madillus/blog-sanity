@@ -109,10 +109,10 @@
   "resolved" "https://registry.npmjs.org/@sanity/timed-out/-/timed-out-4.0.2.tgz"
   "version" "4.0.2"
 
-"@sanity/types@^2.0.1":
-  "integrity" "sha512-fNdrJSt0lQ7dfPu6bXmuqwWbl9mzfQtKHqWKsU6z2Dk6RuTZXF+EVTmpRHCHdbb5B2Hw9pocc/iReXtkAdQJsg=="
-  "resolved" "https://registry.npmjs.org/@sanity/types/-/types-2.34.0.tgz"
-  "version" "2.34.0"
+"@sanity/types@^2.0.1", "@sanity/types@^2.35.0":
+  "integrity" "sha512-hocM0bZVa6ONVjLA50gxRSwIcmsaRPpvhl71MgutHxcnvsGZD55n2LQZb4n7h+J9yEFSkz9lY8HbY8n/bw8tsw=="
+  "resolved" "https://registry.npmjs.org/@sanity/types/-/types-2.35.0.tgz"
+  "version" "2.35.0"
   dependencies:
     "@sanity/client" "^3.3.3"
     "@sanity/color" "^2.1.14"

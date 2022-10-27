@@ -1,6 +1,6 @@
+// @ts-nocheck
 import { PortableText } from '@portabletext/react';
 import { GetStaticProps } from 'next';
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import SyntaxHighlighter from 'react-syntax-highlighter';

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { PortableText } from '@portabletext/react';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';

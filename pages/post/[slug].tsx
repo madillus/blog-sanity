@@ -150,6 +150,7 @@ function Post({ post }: Props) {
         </div>
         <hr className="max-w-sm my-10 mx-auto border md:max-w-3xl border-violet-600" />
         <div className="prose m-auto">
+          // eslint-disable-next-line
           <PortableText value={body} components={components} />
         </div>
       </article>

@@ -21,6 +21,7 @@ function Hero() {
           src={swirltrans}
           width="200%"
           height="200%"
+          alt="Logo"
         />
       </div>
     </div>

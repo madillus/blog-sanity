@@ -19,7 +19,7 @@ function Content({ posts }: Props) {
               <a>
                 <div className="border rounded-lg group cursor-pointer align-middle overflow-hidden">
                   {post.mainImage && (
-                    <img
+                    <Image
                       className=" h-60 w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
                       src={urlFor(post.mainImage).url()!}
                       alt="Main image"
@@ -37,7 +37,7 @@ function Content({ posts }: Props) {
                         </span>
                       </p>
                     </div>
-                    <img
+                    <Image
                       className=" h-18 w-14 rounded-lg"
                       src={urlFor(post.author.image).url()!}
                       alt="Author Image"

@@ -13,6 +13,7 @@ function Header() {
               src={madlogo}
               width="50%"
               height="50%"
+              alt="Madillus Logo"
             />
           </a>
         </Link>

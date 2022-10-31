@@ -15,7 +15,6 @@ export default function Home({ posts }: Props) {
     <div className="flex flex-col min-h-screen max-w-4xl mx-auto ">
       <Head>
         <title>Madillus Blogged</title>
-        <meta name="Madillus Blogged" content="A simple blog site" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link

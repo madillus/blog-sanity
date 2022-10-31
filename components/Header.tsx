@@ -2,11 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import madlogo from '../public/madlogo.png';
 
-// export interface madlogo {
-//   src: string
-//   alt: string
-// }
-
 function Header() {
   return (
     <header className="flex bg-gradient-to-r from-black via-violet-600 to-black ... text-white justify-between p-2 max-w-4xl">

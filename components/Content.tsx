@@ -23,8 +23,8 @@ function Content({ posts }: Props) {
                       className=" h-60 w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
                       src={urlFor(post.mainImage).url()!}
                       alt="Main image"
-                      // width="40%"
-                      // height="40%"
+                      width="40%"
+                      height="40%"
                     />
                   )}
                   <div className="flex justify-between items-center p-5 bg-white">
@@ -41,8 +41,8 @@ function Content({ posts }: Props) {
                       className=" h-18 w-14 rounded-lg"
                       src={urlFor(post.author.image).url()!}
                       alt="Author Image"
-                      // width="50%"
-                      // height="50%"
+                      width="50%"
+                      height="50%"
                     />
                   </div>
                 </div>

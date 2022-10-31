@@ -1,6 +1,5 @@
 import { PortableText } from '@portabletext/react';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -29,6 +28,9 @@ const components = {
         <img
           className="w-auto h-auto object-cover"
           src={urlFor(value).url()!}
+          alt="Rich-text image"
+          width="50%"
+          height="50%"
         />
       )
     },
@@ -105,8 +107,8 @@ function Post({ post }: Props) {
             className=" h-12 w-10 rounded-lg"
             src={urlFor(post.author.image).url()!}
             alt="Author Image"
-            // width="50%"
-            // height="50%"
+            width="50%"
+            height="50%"
           />
           <p className="font-extralight text-xs">
             Blog post by <span className="font-bold">{post.author.name}</span> -

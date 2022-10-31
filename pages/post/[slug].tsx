@@ -1,9 +1,11 @@
 import { PortableText } from '@portabletext/react';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import { sanityClient, urlFor } from '../../sanity';
 import { Post } from '../../types';
@@ -18,7 +20,8 @@ interface IFormInput {
 interface Props {
   post: Post
 }
-
+//With typescript you can define the type of the props, and this is needed for the richtext block in the post
+//
 const components = {
   types: {
     image: ({ value }: { value: string }) => {
@@ -82,7 +85,7 @@ function Post({ post }: Props) {
   const { title, mainImage, body, slug } = post
 
   return (
-    <main>
+    <main className="max-w-4xl mx-auto">
       <Header />
       {post.mainImage && (
         <img
@@ -184,12 +187,13 @@ function Post({ post }: Props) {
           </div>
           <input
             type="submit"
-            className="shadow bg-violet-600 hover:bg-violet-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            value="Submit"
+            className="shadow bg-violet-600 hover:bg-violet-800 focus:shadow-outline text-white font-bold py-2 px-4 rounded"
           />
         </form>
       )}
 
-      <div className="flex flex-col p-10 my-10 max-w-md mx-auto md:max-w-xl shadow-violet-600 shadow space-y-2">
+      <div className="flex flex-col p-10 my-10 max-w-sm mx-auto md:max-w-xl shadow-violet-600 shadow space-y-2">
         <h3 className="text-2xl text-violet-600 font-bold">Comments</h3>
 
         {post.comments.map((comment) => (
@@ -204,6 +208,7 @@ function Post({ post }: Props) {
           </div>
         ))}
       </div>
+      <Footer />
     </main>
   )
 }

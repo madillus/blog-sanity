@@ -7,10 +7,16 @@ import madlogo from '../public/madlogo.png';
 //   alt: string
 // }
 
-function Header() {
+function Footer() {
   return (
-    <header className="flex bg-gradient-to-r from-black via-violet-600 to-black ... text-white justify-between p-2 max-w-4xl">
-      <div className="flex items-center space-x-5 ml-8">
+    <footer className="flex items-center justify-center relative flex-col bg-gradient-to-r from-black via-violet-600 to-black ... text-white p-4 max-w-4xl bottom-0">
+      <a href="https://www.aidangilmore.eu/"> Aidan Gilmore © 2022 </a>
+    </footer>
+  )
+}
+export default Footer
+{
+  /* <div className="flex items-center space-x-5 ml-8">
         <Link href="/">
           <a>
             <Image
@@ -30,8 +36,5 @@ function Header() {
             <h3 className="bg-violet-600 px-4 py-1 rounded-full">Follow</h3>
           </a>
         </Link>
-      </div>
-    </header>
-  )
+</div>*/
 }
-export default Header

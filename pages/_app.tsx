@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Madillus Blogged</title>
-        <meta name="Madillus Blogged" content="A simple blog site" />
+        <meta name="description" content="A simple blog site" />
         <link rel="manifest" href="/images/manifest.webmanifest" />
 
         <link rel="icon" href="/favicon.ico" />

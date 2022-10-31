@@ -8,6 +8,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Madillus Blogged</title>
         <meta name="Madillus Blogged" content="A simple blog site" />
+        <link rel="manifest" href="/images/manifest.webmanifest" />
+
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
@@ -26,7 +28,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
       <Component {...pageProps} />
     </>

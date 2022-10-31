@@ -114,6 +114,7 @@ function Post({ post }: Props) {
             alt="Author Image"
             width="100%"
             height="100%"
+            layout="fixed"
           />
           <p className="font-extralight text-xs">
             Blog post by <span className="font-bold">{post.author.name}</span> -

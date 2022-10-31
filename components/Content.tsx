@@ -10,14 +10,14 @@ interface Props {
 function Content({ posts }: Props) {
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6 mb-3 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6 ">
         {posts
           .slice(0)
           .reverse()
           .map((post) => (
             <Link key={post._id} href={`/post/${post.slug.current}`}>
-              <a>
-                <div className=" border rounded-lg group cursor-pointer align-middle overflow-hidden">
+              <a className="border rounded-lg overflow-hidden">
+                <div className="  group cursor-pointer align-middle overflow-hidden">
                   {post.mainImage && (
                     <div className="relative  h-60 w-full object-cover ">
                       <Image

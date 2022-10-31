@@ -27,11 +27,12 @@ const components = {
     image: ({ value }: { value: string }) => {
       return (
         <Image
-          className="w-auto h-auto object-cover"
+          className="w-auto h-auto object-contain"
           src={urlFor(value).url()!}
           alt="Rich-text image"
-          width="50%"
-          height="50%"
+          width="100%"
+          height="100%"
+          layout="responsive"
         />
       )
     },
@@ -95,8 +96,9 @@ function Post({ post }: Props) {
           className=" h-40 w-full object-cover max-w-4xl mx-auto lg:h-80"
           src={urlFor(post.mainImage).url()!}
           alt="Main image"
-          width="50%"
-          height="50%"
+          width="100%"
+          height="40%"
+          layout="responsive"
         />
       )}
 
@@ -107,11 +109,11 @@ function Post({ post }: Props) {
         </h2>
         <div className="flex items-center space-x-2">
           <Image
-            className=" h-12 w-10 rounded-lg"
+            className=" h-14 w-10 rounded-lg object-cover"
             src={urlFor(post.author.image).url()!}
             alt="Author Image"
-            width="50%"
-            height="50%"
+            width="100%"
+            height="100%"
           />
           <p className="font-extralight text-xs">
             Blog post by <span className="font-bold">{post.author.name}</span> -

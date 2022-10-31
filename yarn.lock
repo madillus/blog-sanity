@@ -65,7 +65,7 @@
   "resolved" "https://registry.npmjs.org/@portabletext/types/-/types-2.0.0.tgz"
   "version" "2.0.0"
 
-"@sanity/client@^3.3.3", "@sanity/client@^3.3.5", "@sanity/client@^3.4.1":
+"@sanity/client@^3.0.0", "@sanity/client@^3.3.3", "@sanity/client@^3.3.5", "@sanity/client@^3.4.1":
   "integrity" "sha512-WSvnroCHqboUeyY0nl71vDPKmfurXI0mtqdNDb5u8MW00CAHRyCt1+Sgy39D/g+6R35FYniV31vTSTo3ofim0A=="
   "resolved" "https://registry.npmjs.org/@sanity/client/-/client-3.4.1.tgz"
   "version" "3.4.1"
@@ -104,7 +104,7 @@
     "split2" "^4.1.0"
     "throttle-debounce" "^5.0.0"
 
-"@sanity/image-url@^1.0.1":
+"@sanity/image-url@^1.0.0", "@sanity/image-url@^1.0.1":
   "integrity" "sha512-AdKQ3zMk7WdoNwoJPrAvQhW+kUtBldBX0nHtnGy+rwmgsCQ0rAXasrgH43Fhmsp/yB6piiq+F2d5qEuBFsdQVg=="
   "resolved" "https://registry.npmjs.org/@sanity/image-url/-/image-url-1.0.1.tgz"
   "version" "1.0.1"
@@ -734,6 +734,13 @@
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   "version" "3.3.4"
 
+"next-sanity-image@^4.1.0":
+  "integrity" "sha512-DOKqiVJjGQb/FGPA5e5ezVK326w1GFx28J0XFt8XMtaaWzRfYdPQlkUhJdTDIAPIMMwQQwAmSxxA0r2rQpKigg=="
+  "resolved" "https://registry.npmjs.org/next-sanity-image/-/next-sanity-image-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "@sanity/image-url" "^1.0.0"
+
 "next-sanity@^0.8.4":
   "integrity" "sha512-3ZgW+1+X0Y2PPCqdt7RIKID4EyX9jqnn3lrHahqLW6N6C/8Up71TA0M+Ltq2vlLUSt9YkvqsTmHP5hgaOg2SWQ=="
   "resolved" "https://registry.npmjs.org/next-sanity/-/next-sanity-0.8.4.tgz"
@@ -743,7 +750,7 @@
     "@sanity/groq-store" "^0.4.1"
     "groq" "^2.29.3"
 
-"next@latest":
+"next@^11.0.0 || ^12.0.0", "next@latest":
   "integrity" "sha512-l7bvmSeIwX5lp07WtIiP9u2ytZMv7jIeB8iacR28PuUEFG5j0HGAPnMqyG5kbZNBG2H7tRsrQ4HCjuMOPnANZw=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.3.1.tgz"
   "version" "12.3.1"
@@ -974,7 +981,7 @@
     "prismjs" "^1.27.0"
     "refractor" "^3.6.0"
 
-"react@^16.3 || ^17 || ^18", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17 || ^18", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 0.14.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.1.0":
+"react@^16.3 || ^17 || ^18", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17 || ^18", "react@^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 0.14.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.1.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"

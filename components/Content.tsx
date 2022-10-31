@@ -17,17 +17,18 @@ function Content({ posts }: Props) {
           .map((post) => (
             <Link key={post._id} href={`/post/${post.slug.current}`}>
               <a>
-                <div className="border rounded-lg group cursor-pointer align-middle overflow-hidden">
+                <div className=" border rounded-lg group cursor-pointer align-middle overflow-hidden">
                   {post.mainImage && (
-                    <Image
-                      className=" h-60 w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
-                      src={urlFor(post.mainImage).url()!}
-                      alt="Main image"
-                      width="40%"
-                      height="40%"
-                    />
+                    <div className="relative  h-60 w-full object-cover ">
+                      <Image
+                        className=" h-60 w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                        src={urlFor(post.mainImage).url()!}
+                        alt="Main image"
+                        layout="fill"
+                      />
+                    </div>
                   )}
-                  <div className="flex justify-between items-center p-5 bg-white">
+                  <div className="flex justify-between items-start p-5 bg-white">
                     <div>
                       <p className="font-bold">{post.title}</p>
                       <p>
@@ -37,13 +38,17 @@ function Content({ posts }: Props) {
                         </span>
                       </p>
                     </div>
-                    <Image
-                      className=" h-18 w-14 rounded-lg"
-                      src={urlFor(post.author.image).url()!}
-                      alt="Author Image"
-                      width="50%"
-                      height="50%"
-                    />
+
+                    <div className="flex items-center p-2">
+                      <Image
+                        className="rounded-lg object-cover"
+                        src={urlFor(post.author.image).url()!}
+                        alt="Author Image"
+                        width="100%"
+                        height="100%"
+                        layout="fixed"
+                      />
+                    </div>
                   </div>
                 </div>
               </a>

@@ -98,7 +98,7 @@ function Post({ post }: Props) {
           alt="Main image"
           width="100%"
           height="100%"
-          layout="responsive"
+          layout="fill"
         />
       )}
 

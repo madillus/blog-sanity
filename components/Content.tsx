@@ -24,7 +24,7 @@ function Content({ posts }: Props) {
                   {post.mainImage && (
                     <div className="relative h-60 w-full object-cover ">
                       <Image
-                        className="h-60 w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                        className="h-60 w-full object-contain rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
                         src={urlFor(post.mainImage).url()!}
                         alt="Main image"
                         layout="fill"

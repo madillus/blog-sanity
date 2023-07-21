@@ -1,14 +1,14 @@
-import { PortableText } from '@portabletext/react';
-import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import { sanityClient, urlFor } from '../../sanity';
-import { Post } from '../../types';
+import { PortableText } from '@portabletext/react'
+import { GetStaticProps } from 'next'
+import Image from 'next/image'
+import { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
+import { sanityClient, urlFor } from '../../sanity'
+import { Post } from '../../types'
 
 interface IFormInput {
   _id: string
@@ -93,11 +93,11 @@ function Post({ post }: Props) {
       <Header />
       {post.mainImage && (
         <Image
-          className=" h-40 w-full object-cover max-w-4xl mx-auto lg:h-80"
+          className="w-auto h-auto object-contain max-w-4xl mx-auto lg:h-80"
           src={urlFor(post.mainImage).url()!}
           alt="Main image"
           width="100%"
-          height="40%"
+          height="100%"
           layout="responsive"
         />
       )}

@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { sanityClient, urlFor } from '../sanity';
-import { Post } from '../types';
+import Image from 'next/image'
+import Link from 'next/link'
+import { sanityClient, urlFor } from '../sanity'
+import { Post } from '../types'
 
 interface Props {
   posts: [Post]
@@ -17,11 +17,11 @@ function Content({ posts }: Props) {
           .map((post) => (
             <Link key={post._id} href={`/post/${post.slug.current}`}>
               <a className="border rounded-lg overflow-hidden">
-                <div className="  group cursor-pointer align-middle overflow-hidden">
+                <div className="group cursor-pointer align-middle overflow-hidden">
                   {post.mainImage && (
-                    <div className="relative  h-60 w-full object-cover ">
+                    <div className="relative h-60 w-full object-cover ">
                       <Image
-                        className=" h-60 w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                        className="h-60 w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200 ease-in-out"
                         src={urlFor(post.mainImage).url()!}
                         alt="Main image"
                         layout="fill"
@@ -62,6 +62,7 @@ export default Content
 export const getServerSideProps = async () => {
   const query = `*[_type == "post"]{
     _id,
+    _createdAt,
     title,
     author -> {
     name,

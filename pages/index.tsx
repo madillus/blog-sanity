@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import Content from '../components/Content';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import { sanityClient, urlFor } from '../sanity';
-import { Post } from '../types';
+import Head from 'next/head'
+import Content from '../components/Content'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import { sanityClient, urlFor } from '../sanity'
+import { Post } from '../types'
 
 interface Props {
   posts: [Post]
@@ -47,6 +47,7 @@ export default function Home({ posts }: Props) {
 export const getServerSideProps = async () => {
   const query = `*[_type == "post"]{
     _id,
+    _createdAt,
     title,
     author -> {
     name,

@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import swirltrans from '../public/swirltrans.png';
+import Image from 'next/image'
+import swirltrans from '../public/swirltrans.png'
 
 function Hero() {
   return (
@@ -9,11 +9,9 @@ function Hero() {
           <span className="underline decoration-violet-600 text-violet-600">
             Madillus
           </span>{' '}
-          is my name and blogging is my game!
+          Unplugged: Untangling the Web of Development and UX
         </h1>
-        <h2 className="flex text-2xl font-serif">
-          The coding journey of a lifetime!
-        </h2>
+        <h2 className="flex text-2xl font-serif">The journey of a lifetime!</h2>
       </div>
       <div className="hidden md:inline-flex">
         <Image

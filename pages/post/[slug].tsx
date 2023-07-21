@@ -93,7 +93,7 @@ function Post({ post }: Props) {
       <Header />
       {post.mainImage && (
         <Image
-          className="w-auto h-auto object-contain max-w-4xl mx-auto -my-24 lg:h-80"
+          className="w-auto h-auto object-contain"
           src={urlFor(post.mainImage).url()!}
           alt="Main image"
           width="100%"

@@ -12,8 +12,11 @@ function Content({ posts }: Props) {
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6 ">
         {posts
-          .slice(0)
-          .reverse()
+          .sort(
+            (a, b) =>
+              new Date(b._createdAt).getTime() -
+              new Date(a._createdAt).getTime(),
+          )
           .map((post) => (
             <Link key={post._id} href={`/post/${post.slug.current}`}>
               <a className="border rounded-lg overflow-hidden">

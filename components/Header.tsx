@@ -4,7 +4,7 @@ import madlogo from '../public/madlogo.png';
 
 function Header() {
   return (
-    <header className="flex bg-gradient-to-r from-black via-violet-600 to-black ... text-white justify-between p-2 max-w-4xl">
+    <header className="flex bg-gradient-to-r from-black via-violet-600 to-black ... text-white justify-between p-2 max-w-7xl">
       <div className="flex items-center space-x-5 ml-8">
         <Link href="/">
           <a>

@@ -1,14 +1,14 @@
-import { PortableText } from '@portabletext/react'
-import { GetStaticProps } from 'next'
-import Image from 'next/image'
-import { useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
-import Footer from '../../components/Footer'
-import Header from '../../components/Header'
-import { sanityClient, urlFor } from '../../sanity'
-import { Post } from '../../types'
+import { PortableText } from '@portabletext/react';
+import { GetStaticProps } from 'next';
+import Image from 'next/image';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import { sanityClient, urlFor } from '../../sanity';
+import { Post } from '../../types';
 
 interface IFormInput {
   _id: string
@@ -31,7 +31,7 @@ const components = {
           src={urlFor(value).url()!}
           alt="Rich-text image"
           width="100%"
-          height="100%"
+          height="65%"
           layout="responsive"
         />
       )
@@ -97,7 +97,7 @@ function Post({ post }: Props) {
           src={urlFor(post.mainImage).url()!}
           alt="Main image"
           width="100%"
-          height="100%"
+          height="70%"
           layout="responsive"
         />
       )}

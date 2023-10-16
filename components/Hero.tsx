@@ -3,7 +3,7 @@ import swirltrans from '../public/swirltrans.png';
 
 function Hero() {
   return (
-    <div className="flex flex-row justify-between items-center border-black px-4 space-y-5 py-10">
+    <div className="flex flex-row justify-between items-center border-black px-8 space-y-5 py-10">
       <div className="flex mt-8 flex-col space-y-5">
         <h1 className="text-6xl max-w-xl font-serif">
           Musings of{' '}

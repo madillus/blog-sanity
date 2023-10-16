@@ -1,7 +1,7 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
-function about() {
+function follow() {
   return (
     <div className="flex flex-col min-h-screen max-w-7xl mx-auto">
       <Header />
@@ -15,4 +15,4 @@ function about() {
     </div>
   )
 }
-export default about
+export default follow
